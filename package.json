@@ -1,0 +1,33 @@
+{
+  "name": "garagebook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GarageBook - multi-vehicle garage management (MySQL + MongoDB + Next.js)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:schema": "node --env-file=.env.local scripts/run-sql.mjs db/01_schema.sql",
+    "db:additions": "node --env-file=.env.local scripts/run-sql.mjs db/02_additions.sql",
+    "db:seed": "node --env-file=.env.local scripts/seed.mjs",
+    "db:reset": "node --env-file=.env.local scripts/seed.mjs --reset",
+    "test:db": "node --env-file=.env.local scripts/test-db.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "jose": "^5.9.6",
+    "mongodb": "^6.10.0",
+    "mysql2": "^3.11.4",
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": { "node": ">=20.6" }
+}
